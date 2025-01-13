@@ -5,6 +5,7 @@ import { Menu } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/app/_components/ui/button";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,8 +24,13 @@ export default function Navbar() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <Image src="/images/icon.svg" alt="Logo" width={24} height={24} />
-          <a href="#inicio">LivroSaaS</a>
+          <a
+            href="#inicio"
+            className="flex items-center gap-2 font-GeistMono text-bold text-[20px]  "
+          >
+            <Image src="/images/icon.svg" alt="Logo" width={24} height={24} />
+            LivroSaaS
+          </a>
         </motion.div>
 
         {/* Links grandes */}
@@ -42,12 +48,14 @@ export default function Navbar() {
               {item.name}
             </motion.a>
           ))}
-          <Button
-            className="hidden md:block bg-white text-black hover:bg-gray-200  font-GeistSans rounded-lg text-[14px] border-[#CCCCCC] border-2 "
-            size={"lg"}
-          >
-            Login
-          </Button>
+          <Link href="/login">
+            <Button
+              className="hidden md:block bg-white text-black hover:bg-gray-200  font-GeistSans rounded-lg text-[14px] border-[#CCCCCC] border-2 "
+              size={"lg"}
+            >
+              Login
+            </Button>
+          </Link>
         </div>
 
         {/* Botão de Login */}

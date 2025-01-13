@@ -11,7 +11,7 @@ export default function Home() {
       <div
         className="min-w-full h-full"
         style={{
-          backgroundImage: "url('/images/background.png')",
+          backgroundImage: "url('/images/Background.png')",
           backgroundSize: "cover",
         }}
       >
@@ -23,7 +23,7 @@ export default function Home() {
       <div
         className="min-w-full h-full"
         style={{
-          backgroundImage: "url('/images/background.png')",
+          backgroundImage: "url('/images/Background.png')",
           backgroundSize: "cover",
         }}
       >
