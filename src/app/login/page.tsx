@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "../_components/ui/button";
 import { Input } from "../_components/ui/input";
+import Link from "next/link";
 
 export default function LoginPage() {
   return (
@@ -21,8 +22,10 @@ export default function LoginPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <Image src="/images/icon.svg" alt="Logo" width={32} height={32} />
-        <span className="text-black">LivroSaaS</span>
+        <Link href="/" className="flex gap-1 items-center">
+          <Image src="/images/icon.svg" alt="Logo" width={32} height={32} />
+          <span className="text-black">LivroSaaS</span>
+        </Link>
       </motion.div>
 
       {/* Card de Login */}
@@ -95,9 +98,12 @@ export default function LoginPage() {
       {/* Link para registro */}
       <p className="text-sm text-center mt-6">
         Não possui cadastro?{" "}
-        <a href="#" className="text-blue-500 underline">
+        <Link
+          href="/registro"
+          className="text-bold text-black font-GeistMono underline"
+        >
           Registre-se
-        </a>
+        </Link>
       </p>
     </main>
   );
