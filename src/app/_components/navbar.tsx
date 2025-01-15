@@ -90,12 +90,14 @@ export default function Navbar() {
               </li>
             ))}
             <li>
-              <Button
-                className="bg-white text-black hover:bg-gray-200 rounded-lg text-[14px] border-[#CCCCCC] font-GeistSans border-2 "
-                onClick={() => setIsOpen(false)}
-              >
-                Login
-              </Button>
+              <Link href="/login">
+                <Button
+                  className="bg-white text-black hover:bg-gray-200 rounded-lg text-[14px] border-[#CCCCCC] font-GeistSans border-2 "
+                  onClick={() => setIsOpen(false)}
+                >
+                  Login
+                </Button>
+              </Link>
             </li>
           </ul>
         </motion.div>

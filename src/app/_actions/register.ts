@@ -1,9 +1,9 @@
 "use server"
 
 import db from "@/lib/db";
-import { RegisterType } from "../registro/page";
 import { redirect } from "next/navigation";
 import { hashSync } from "bcrypt-ts";
+import { RegisterType } from "../_components/registerForm";
 
 
 export async function Register(formData: RegisterType) {
