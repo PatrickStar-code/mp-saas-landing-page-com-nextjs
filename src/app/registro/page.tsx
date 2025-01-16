@@ -1,6 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
+
 import Link from "next/link";
 
 import RegisterForm from "../_components/registerForm";
@@ -22,19 +21,6 @@ export default async function RegisterPage() {
         backgroundSize: "cover",
       }}
     >
-      {/* Logo com animação */}
-      <motion.div
-        className="flex items-center gap-2 font-GeistMono font-semibold text-lg mb-8"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Link href="/" className="flex gap-1 items-center">
-          <Image src="/images/icon.svg" alt="Logo" width={32} height={32} />
-          <span className="text-black">LivroSaaS</span>
-        </Link>
-      </motion.div>
-
       <RegisterForm />
 
       {/* Link para Login */}

@@ -2,8 +2,8 @@
 import { signIn } from "@/auth";
 
 import { AuthError } from "next-auth";
-import { redirect } from "next/navigation";
 import { LoginType } from "../_components/loginForm";
+import { redirect } from "next/navigation";
 
 export default async function Login(data: LoginType) {
     const { email, password } = data;
@@ -20,5 +20,6 @@ export default async function Login(data: LoginType) {
         }
     }
     redirect("/");
+
 
 }
