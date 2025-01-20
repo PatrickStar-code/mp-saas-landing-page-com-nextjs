@@ -80,12 +80,17 @@ export default function NavbarContainer({ session }: NavbarContainerProps) {
         {/* Botão de Login */}
 
         {/* Botão de menu (mobile) */}
-        <button
-          className="md:hidden text-gray-800 dark:text-white"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <Menu size={24} />
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          {/* Dropdown para Mobile */}
+          {session && <DropdownAvatar session={session} />}
+          {/* Botão de menu */}
+          <button
+            className="text-gray-800 dark:text-white"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <Menu size={24} />
+          </button>
+        </div>
       </div>
 
       {/* Menu mobile */}
@@ -108,16 +113,18 @@ export default function NavbarContainer({ session }: NavbarContainerProps) {
                 </a>
               </li>
             ))}
-            <li>
-              <Link href="/login">
-                <Button
-                  className="bg-white text-black hover:bg-gray-200 rounded-lg text-[14px] border-[#CCCCCC] font-GeistSans border-2 "
-                  onClick={() => setIsOpen(false)}
-                >
-                  Login
-                </Button>
-              </Link>
-            </li>
+            {!session && (
+              <li>
+                <Link href="/login">
+                  <Button
+                    className="bg-white text-black hover:bg-gray-200 rounded-lg text-[14px] border-[#CCCCCC] font-GeistSans border-2 "
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Login
+                  </Button>
+                </Link>
+              </li>
+            )}
           </ul>
         </motion.div>
       )}
